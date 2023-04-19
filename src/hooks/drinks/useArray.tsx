@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { DrinkDto } from "../../dtos/Drink"
 import { filterDrink } from "../../utils/mappers/filterDrink"
-import { drinksObject } from "../../mocks/drinks"
+import { useFetch } from "./useFetch"
 
 export const useArray = () => {
+  const { request } = useFetch()
   const [drinks, setDrinks] = useState<DrinkDto[]>([])
 
   const vodkas = filterDrink(drinks, 'vodka')
@@ -11,8 +12,13 @@ export const useArray = () => {
   const beers = filterDrink(drinks, 'beer')
 
   useEffect(() => {
-    setDrinks(drinksObject)
+      getDrinks()
   }, [])
+
+  const getDrinks = async () => {
+    const data = await request('drinks')
+    setDrinks(data)
+  }
 
   return { vodkas, whiskys, beers }
 }

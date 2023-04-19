@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { IndexedList } from "../../dtos/IndexedList"
-import { drinksObject } from "../../mocks/drinks"
 import { getDrinksByCategory } from "../../utils/mappers/drinksByCategory"
+import { useFetch } from "./useFetch"
 
 export const useIndex = () => {
+  const { request } = useFetch()
   const [drinksByCategory, setDrinksByCategory] = useState<IndexedList>({
     beer: [],
     vodka: [],
@@ -15,8 +16,13 @@ export const useIndex = () => {
   const whiskys = drinksByCategory["whisky"]
 
   useEffect(() => {
-    setDrinksByCategory(getDrinksByCategory(drinksObject))
+    getDrinks()
   }, [])
+
+  const getDrinks = async () => {
+    const data = await request('drinks')
+    setDrinksByCategory(getDrinksByCategory(data))
+  }
 
   return { beers, vodkas, whiskys }
 }
