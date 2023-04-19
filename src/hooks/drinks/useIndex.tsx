@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { IndexedList } from "../../dtos/IndexedList"
 import { getDrinksByCategory } from "../../utils/mappers/drinksByCategory"
-import { useFetch } from "./useFetch"
+import { useFetch } from "../useFetch"
 import { DrinkDto } from "../../dtos/Drink"
 
 export const useIndex = () => {

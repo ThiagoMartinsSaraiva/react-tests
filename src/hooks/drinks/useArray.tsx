@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { DrinkDto } from "../../dtos/Drink"
 import { filterDrink } from "../../utils/mappers/filterDrink"
-import { useFetch } from "./useFetch"
+import { useFetch } from "../useFetch"
 
 export const useArray = () => {
   const { request } = useFetch()
