@@ -1,25 +1,22 @@
 import { useEffect, useState } from "react"
-import { DrinkDto } from "../dtos/Drink"
 import { drinksObject } from "../mocks/drinks"
 import { DrinkSection } from "../components/DrinkSection"
+import { IndexedList } from "../dtos/IndexedList"
+import { getDrinksByCategory } from "../utils/mappers/drinksByCategory"
 
-export const ArrayArrays = () => {
-  const [drinks, setDrinks] = useState<DrinkDto[]>([])
-
-  const vodkas = drinks.filter((drink) => {
-    return drink.category === 'vodka'
+export const Indexing = () => {
+  const [drinksByCategory, setDrinksByCategory] = useState<IndexedList>({
+    beer: [],
+    vodka: [],
+    whisky: [],
   })
 
-  const whiskys = drinks.filter((drink) => {
-    return drink.category === 'whisky'
-  })
-
-  const beers = drinks.filter((drink) => {
-    return drink.category === 'beer'
-  })
+  const beers = drinksByCategory["beer"]
+  const vodkas = drinksByCategory["vodka"]
+  const whiskys = drinksByCategory["whisky"]
 
   useEffect(() => {
-    setDrinks(drinksObject)
+    setDrinksByCategory(getDrinksByCategory(drinksObject))
   }, [])
 
   return (

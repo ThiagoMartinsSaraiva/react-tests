@@ -1,8 +1,8 @@
 import './styles/global.css'
-import { ArrayArrays } from './containers/ArrayArrays'
+import { Indexing } from './containers/Indexing'
 
 function App() {
-  return <ArrayArrays />
+  return <Indexing />
 }
 
 export default App
