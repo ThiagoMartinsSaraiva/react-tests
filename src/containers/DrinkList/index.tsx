@@ -5,7 +5,7 @@ export const DrinkList = () => {
   const { beers, vodkas, whiskys } = useIndex()
   return (
     <div className="h-screen bg-zinc-900 pt-6">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" data-testid="drink-section-container">
         <DrinkSection title="Cervejas" drinkList={beers} />
         <DrinkSection title="Vodkas" drinkList={vodkas} />
         <DrinkSection title="Whiskys" drinkList={whiskys} />

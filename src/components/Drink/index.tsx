@@ -5,5 +5,5 @@ type DrinkProps = {
 }
 
 export const Drink = ({ drink }: DrinkProps) => {
-  return <p>{drink.name}</p>
+  return <p data-testid={"drink-name-"+drink.name}>{drink.name}</p>
 }
