@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { IndexedList } from "../../dtos/IndexedList"
 import { getDrinksByCategory } from "../../utils/mappers/drinksByCategory"
 import { useFetch } from "./useFetch"
+import { DrinkDto } from "../../dtos/Drink"
 
 export const useIndex = () => {
   const { request } = useFetch()
@@ -20,7 +21,7 @@ export const useIndex = () => {
   }, [])
 
   const getDrinks = async () => {
-    const data = await request('drinks')
+    const data = await request<DrinkDto[]>('drinks')
     setDrinksByCategory(getDrinksByCategory(data))
   }
 

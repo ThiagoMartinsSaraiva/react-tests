@@ -16,7 +16,7 @@ export const useArray = () => {
   }, [])
 
   const getDrinks = async () => {
-    const data = await request('drinks')
+    const data = await request<DrinkDto[]>('drinks')
     setDrinks(data)
   }
 
