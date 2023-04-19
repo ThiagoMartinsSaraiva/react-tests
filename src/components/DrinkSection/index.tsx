@@ -1,5 +1,5 @@
-import { DrinkDto } from "../dtos/Drink";
-import { Drink } from "./Drink";
+import { DrinkDto } from "../../dtos/Drink";
+import { Drink } from "../Drink";
 
 export const DrinkSection = ({ title, drinkList }: { title: string, drinkList: DrinkDto[]}): React.ReactElement => {
  return (

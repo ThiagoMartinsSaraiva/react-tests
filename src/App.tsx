@@ -1,8 +1,8 @@
 import './styles/global.css'
-import { Indexing } from './containers/Indexing'
+import { DrinkList } from './containers/DrinkList'
 
 function App() {
-  return <Indexing />
+  return <DrinkList />
 }
 
 export default App

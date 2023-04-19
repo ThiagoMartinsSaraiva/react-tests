@@ -7,6 +7,7 @@ export const getDrinksByCategory = (drinks: DrinkDto[]) => {
     vodka: [],
     whisky: [],
   }
+
   drinks.forEach(drink => {
     if (!indexedDrinks[drink.category]) return
 
