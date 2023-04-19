@@ -1,5 +1,9 @@
 import { DrinkDto } from "../../dtos/Drink"
 
-export const Drink = ({ drink }: { drink: DrinkDto }) => {
+type DrinkProps = {
+  drink: DrinkDto
+}
+
+export const Drink = ({ drink }: DrinkProps) => {
   return <p>{drink.name}</p>
 }
