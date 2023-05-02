@@ -1,5 +1,5 @@
 export const useFetch = () => {
-    async function request<TResponse> (endpoint: string, method: 'get' | 'post' | 'put' | 'delete' = 'get') {
+  async function request<TResponse> (endpoint: string, method: 'get' | 'post' | 'put' | 'delete' = 'get') {
     const response = await fetch(`api/${endpoint}`, {
       method,
     })
